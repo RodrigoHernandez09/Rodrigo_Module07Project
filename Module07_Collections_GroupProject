@@ -103,7 +103,7 @@ class CollectionsProject
 			// Check if a movie name was entered
 			if(string.IsNullOrWhiteSpace(removeMovie))
 			{
-				throw new Exception("No name was entered");
+				throw new ArgumentException("No name was entered");
 			}
 
 			// Creates boolan value to check if the movie entered was in the dictionary and if it was removed.
@@ -117,9 +117,9 @@ class CollectionsProject
 				Console.Write("Movie removed successfully");
 			}
 		}
-		catch(Exception a)
+		catch(ArgumentException ex)
 		{
-			Console.Write(a.Message);
+			Console.Write(ex.Message);
 		}
 		catch(Exception a)
 		{
